@@ -3,12 +3,13 @@
      TODO: Podés cambiar estos valores para personalizar
      el tema de tu restaurante
   ─────────────────────────────────────────────── */
-  --color-primario:    #2C3E50;
-  --color-secundario:  #E67E22;
-  --color-fondo:       #FAF8F5;
-  --color-texto:       #333333;
-  --color-claro:       #FFFFFF;
-  --color-reserva-vip: #FFF3CD; /* fondo para grupos de 6+ personas */
+  --color-primario: #2C3E50;
+  --color-secundario: #E67E22;
+  --color-fondo: #ffffff;
+  --color-texto: #333333;
+  --color-claro: #FFFFFF;
+  --color-reserva-vip: #FFF3CD;
+  /* fondo para grupos de 6+ personas */
 
   --fuente-titulo: 'Playfair Display', serif;
   --fuente-cuerpo: 'Lato', sans-serif;
@@ -21,8 +22,275 @@
   box-sizing: border-box;
 }
 
+/* ─── Colores del header ─── */
+header {
+  background: var(--color-primario);
+  padding: 1rem 1.5rem;
+  text-align: left;
+}
+
+header h1 {
+  font-family: var(--fuente-titulo);
+  color: var(--color-claro);
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* ─── Colores del footer ─── */
+footer {
+  background: var(--color-primario);
+  padding: 1rem 1.5rem;
+  text-align: center;
+}
+
+footer h6 {
+  font-family: var(--fuente-titulo);
+  color: var(--color-claro);
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+
+body h4 {
+  font-family: var(--fuente-titulo);
+  color: var(--color-primario);
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* ─── Colores del body ─── */
 body {
   font-family: var(--fuente-cuerpo);
   background-color: var(--color-fondo);
   color: var(--color-texto);
+
+
+}
+
+/* ─── Creación de las tarjetas ─── */
+.cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 280px));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.card-plato {
+  background: #bcebfd;
+  border: 1px var(--color-secundario);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card-plato__categoria {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 2px 8px;
+  align-self: center;
+}
+
+.card-plato__nombre {
+  font-size: 16px;
+  font-weight: 500;
+  color: #10234d;
+  margin: 4px 0 0;
+}
+
+.card-plato__descripcion {
+  font-size: 13px;
+  color: #2d4d8d;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.card-plato__precio {
+  font-size: 15px;
+  font-weight: 500;
+  color: #111827;
+  margin: 6px 0 0;
+}
+
+/* ─── Creación de los estilos de los botones de filtro ─── */
+.btn-filtro {
+  background: var(--color-secundario);
+  color: var(--color-claro);
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.25rem;
+  font-family: var(--fuente-cuerpo);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+
+/* ─── Creación de los estilos del form ─── */
+form.row {
+  background: var(--color-claro);
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 700px;
+  margin: 2rem auto;
+}
+
+.form-label {
+  font-family: var(--fuente-cuerpo);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-texto);
+  margin-bottom: 4px;
+  display: block;
+}
+
+.form-control,
+.form-select {
+  font-family: var(--fuente-cuerpo);
+  font-size: 14px;
+  color: var(--color-texto);
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  width: 100%;
+}
+
+.form-control:focus,
+.form-select:focus {
+  outline: none;
+  border-color: var(--color-secundario);
+  background: var(--color-claro);
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-check-input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--color-secundario);
+  cursor: pointer;
+}
+
+.form-check-label {
+  font-family: var(--fuente-cuerpo);
+  font-size: 14px;
+  color: var(--color-texto);
+}
+
+/* ─── Botón de reserva ─── */
+.btn.btn-primary {
+  background: var(--color-primario);
+  color: var(--color-claro);
+  font-family: var(--fuente-cuerpo);
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+}
+
+.btn.btn-primary:hover {
+  background: var(--color-secundario);
+}
+
+/* ─── Despliega el error al escribir un dato incorrecto en el form ─── */
+.error-campo {
+  display: block;
+  font-size: 12px;
+  color: #dc2626;
+  margin-top: 4px;
+}
+
+/* ─── Color del botón deshabilitado ─── */
+.btn.btn-primary:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* ─── Tabla de reservaciones ─── */
+.tabla-reservas {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--fuente-cuerpo);
+  font-size: 14px;
+  margin-top: 2rem;
+}
+
+.tabla-reservas th {
+  background: var(--color-primario);
+  color: var(--color-claro);
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.tabla-reservas td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  color: var(--color-texto);
+}
+
+.fila-reserva:hover {
+  background: #f3f4f6;
+}
+
+.fila-vip {
+  background: var(--color-reserva-vip);
+}
+
+/* ─── Resumen de reservas final ─── */
+.resumen-reservas {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.resumen-item {
+  background: var(--color-claro);
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 180px;
+  flex: 1;
+}
+
+.resumen-label {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+}
+
+.resumen-total,
+.resumen-personas,
+.resumen-mayor-nombre {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--color-primario);
+}
+
+.resumen-mayor-cantidad {
+  font-size: 13px;
+  color: #6b7280;
 }
